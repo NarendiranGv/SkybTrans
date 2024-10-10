@@ -1,0 +1,284 @@
+/* Media Queries */
+/* Consolidated and Enhanced Media Queries */
+@media (max-width: 1120px) {
+    .slider_section .detail-box {
+        text-align: left;
+    }
+    .businesstag {
+        font-size: 16px;
+        white-space: normal; /* Allows text to wrap */
+        overflow-wrap: break-word; /* Prevents overflow */
+        line-height: 1.5;
+        max-width: 100%; /* Limit width to allow wrapping */
+        margin: 0 auto; /* Center-align within the container */
+    }
+}
+
+@media (max-width: 992px) {
+    .hero_area {
+        height: 55vh;
+        padding: 20px;
+    }
+
+    .slider_section {
+        padding-top: 45px;
+        padding-bottom: 75px;
+        background-size: cover;
+        background-position: left;
+    }
+
+    .header_section .navbar-brand {
+        font-size: 18px;
+    }
+
+    .custom_nav-container .nav_search-btn {
+        background-position: center;
+    }
+
+    .slider_section .carousel-indicators {
+        height: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-navbar {
+        padding-left: 50px;
+    }
+
+    .gap .business {
+        display: block;
+    }
+
+    .gap .businesstag {
+        display: block;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .header_section .navbar-brand {
+        font-size: 18px; /* Adjusted for better visibility */
+    }
+
+    .business {
+        font-size: 22px;
+    }
+
+    .businesstag {
+        font-size: 16px;
+        white-space: normal; /* Allows text to wrap */
+        overflow-wrap: break-word; /* Prevents overflow */
+        line-height: 1.5;
+        max-width: 90%; /* Limit width to allow wrapping */
+        margin: 0 auto; /* Center-align within the container */
+    }
+
+    .navbar-brand .businesstag {
+        color: white; /* Set text color to white */;
+        text-shadow: 
+        0px 0px 5px rgba(0, 0, 0, 0.5), /* Soft shadow */
+        0px 0px 10px rgba(0, 0, 0, 0.3); /* Slightly blurred shadow */
+    }
+
+    .slider_section .detail-box {
+        text-align: center;
+        padding: 15px; /* Added padding for better spacing */
+    }
+
+    .navbar-toggler {
+        position: absolute; /* Position it to the top right corner */
+        top: 15px; /* Adjust this value if needed */
+        right: 0; /* Set right padding to 0 */
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+
+    .header_section .container {
+        padding-right: 0; /* Remove right padding */
+        margin-right: auto;
+        margin-left: auto;
+      }
+    
+      .navbar-brand {
+        align-items: center; /* Center the elements */
+        text-align: center; /* Center the text */
+      }
+}
+
+@media (max-width: 768px) {
+    .header_section .navbar-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        font-size: 18px; /* Adjusted for better visibility */
+        margin: 0 auto; /* Center the brand */
+    }
+
+    .business {
+        font-size: 20px;
+    }
+
+    .businesstag {
+        font-size: 16px;
+        white-space: normal; /* Allows text to wrap */
+        overflow-wrap: break-word; /* Prevents overflow */
+        line-height: 1.5;
+        max-width: 100%; /* Limit width to allow wrapping */
+        margin: 0 auto; /* Center-align within the container */
+    }
+
+    .slider_section .detail-box {
+        text-align: center;
+        padding: 15px; /* Added padding for better spacing */
+    }
+
+    .about_section .img-box {
+        margin-top: 35px;
+    }
+
+    .service_section .box,
+    .client_section .box {
+        width: 100%;
+    }
+
+    .quote_section .box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .contact_section .contact_form input,
+    .contact_section .contact_form button {
+        width: 100%;
+    }
+
+    .client_section .client_container {
+        width: 100%;
+    }
+
+    .navbar-toggler-icon {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .header_section .navbar {
+        padding: 0;
+    }
+
+    .slider_section .detail-box,
+    .about_section .detail-box {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    .slider_section .carousel-indicators {
+        display: none;
+    }
+
+    .about_section {
+        padding: 30px 10px;
+    }
+
+    .footer_section {
+        font-size: 12px;
+    }
+
+    .header_section .navbar-brand span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .sub_page .hero_area {
+        height: 35vh;
+      }
+
+    .hero_area {
+        padding: 20px;
+    }
+
+    .footer_section {
+        font-size: 12px;
+        text-align: center; /* Center-align text for small screens */
+    }
+
+    .navbar-toggler-icon {
+        font-size: 18px;
+    }
+
+    .slider_section .detail-box {
+        padding: 10px 5px; /* Further reduced padding */
+    }
+
+    .header_section .navbar-brand span {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 400px) {
+    .sub_page .hero_area {
+        height: 55vh;
+      }
+
+    .hero_area {
+        padding: 20px;
+        height: 80vh;
+    }
+
+    .info_section .footer_contact {
+        width: 100%; /* Full-width for smaller screens */
+        padding: 10px; /* Padding adjustment */
+    }
+}
+
+@media (max-width: 360px) {
+    .sub_page .hero_area {
+        height: 35vh;
+      }
+
+    .hero_area {
+        padding: 20px;
+        height: 40vh;
+    }
+
+    .header_section .navbar-brand {
+        font-size: 16px;
+    }
+
+    .header_section .navbar-nav .nav-item .nav-link {
+        font-size: 12px;
+    }
+
+    .footer_section {
+        text-align: center; /* Center-align for the smallest screens */
+        padding: 10px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+
+/* Hide the navbar-toggler button on desktop screens */
+.navbar-toggler {
+    display: none; /* By default, hide the button */
+}
+
+/* Show the navbar-toggler button on screens smaller than 992px (tablet and mobile screens) */
+@media (max-width: 992px) {
+    .navbar-toggler {
+        display: block; /* Show the button */
+        position: absolute; /* Optional: Position it to the top right corner */
+        top: 0px; /* Adjust the top position */
+        right: 0px; /* Adjust the right position */
+        z-index: 1000; /* Ensure it appears above other elements */
+    }
+
+    .navbar-toggler .navbar-toggler-icon {
+        color: #333; /* Adjust icon color if needed */
+        font-size: 24px; /* Increase icon size for better visibility */
+    }
+}
