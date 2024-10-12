@@ -1,20 +1,39 @@
 /* Media Queries */
 /* Consolidated and Enhanced Media Queries */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+
+/* Hide the navbar-toggler button on desktop screens */
+.navbar-toggler {
+    display: none;
+    /* By default, hide the button */
+}
+
+
 @media (max-width: 1120px) {
+
     .slider_section .detail-box {
         text-align: left;
     }
+
     .businesstag {
         font-size: 16px;
-        white-space: normal; /* Allows text to wrap */
-        overflow-wrap: break-word; /* Prevents overflow */
+        white-space: normal;
+        overflow-wrap: break-word;
         line-height: 1.5;
-        max-width: 100%; /* Limit width to allow wrapping */
-        margin: 0 auto; /* Center-align within the container */
+        max-width: 100%;
+        margin: 0 auto;
     }
 }
 
 @media (max-width: 992px) {
+    .sub_page .hero_area {
+        height: 55vh;
+    }
+
     .hero_area {
         height: 55vh;
         padding: 20px;
@@ -38,9 +57,39 @@
     .slider_section .carousel-indicators {
         height: auto;
     }
+
+    .navbar-toggler {
+        display: block;
+        /* Show the button */
+        position: absolute;
+        /* Optional: Position it to the top right corner */
+        top: 0px;
+        /* Adjust the top position */
+        right: 0px;
+        /* Adjust the right position */
+        z-index: 1000;
+        /* Ensure it appears above other elements */
+    }
+
+    .navbar-toggler .navbar-toggler-icon {
+        color: #333;
+        /* Adjust icon color if needed */
+        font-size: 24px;
+        /* Increase icon size for better visibility */
+    }
 }
 
+
 @media (max-width: 768px) {
+    .sub_page .hero_area {
+        height: 55vh;
+    }
+
+    .hero_area {
+        height: 55vh;
+        padding: 20px;
+    }
+
     .about-navbar {
         padding-left: 50px;
     }
@@ -52,12 +101,10 @@
     .gap .businesstag {
         display: block;
     }
-}
 
-
-@media (max-width: 768px) {
     .header_section .navbar-brand {
-        font-size: 18px; /* Adjusted for better visibility */
+        font-size: 18px;
+        /* Adjusted for better visibility */
     }
 
     .business {
@@ -66,52 +113,68 @@
 
     .businesstag {
         font-size: 16px;
-        white-space: normal; /* Allows text to wrap */
-        overflow-wrap: break-word; /* Prevents overflow */
+        white-space: normal;
+        overflow-wrap: break-word;
         line-height: 1.5;
-        max-width: 90%; /* Limit width to allow wrapping */
-        margin: 0 auto; /* Center-align within the container */
+        max-width: 90%;
+        margin: 0 auto;
     }
 
-    .navbar-brand .businesstag {
-        color: white; /* Set text color to white */;
+    .navbar-brand .glow {
+        color: #e96805; /* White color for smaller screens */
         text-shadow: 
-        0px 0px 5px rgba(0, 0, 0, 0.5), /* Soft shadow */
-        0px 0px 10px rgba(0, 0, 0, 0.3); /* Slightly blurred shadow */
+          0px 0px 10px rgba(255, 255, 255, 0.7), 
+          0px 0px 15px rgba(255, 255, 255, 0.5);
+      }
+
+    .navbar-brand .businesstag {
+        color: white;
+        ;
+        text-shadow:
+            0px 0px 5px rgba(0, 0, 0, 0.5),
+            0px 0px 10px rgba(0, 0, 0, 0.3);
     }
 
     .slider_section .detail-box {
         text-align: center;
-        padding: 15px; /* Added padding for better spacing */
+        padding: 15px;
+        /* Added padding for better spacing */
     }
 
     .navbar-toggler {
-        position: absolute; /* Position it to the top right corner */
-        top: 15px; /* Adjust this value if needed */
-        right: 0; /* Set right padding to 0 */
-        z-index: 1000; /* Ensure it appears above other elements */
+        position: absolute;
+        /* Position it to the top right corner */
+        top: 15px;
+        /* Adjust this value if needed */
+        right: 0;
+        /* Set right padding to 0 */
+        z-index: 1000;
+        /* Ensure it appears above other elements */
     }
 
     .header_section .container {
-        padding-right: 0; /* Remove right padding */
+        padding-right: 0;
+        /* Remove right padding */
         margin-right: auto;
         margin-left: auto;
-      }
-    
-      .navbar-brand {
-        align-items: center; /* Center the elements */
-        text-align: center; /* Center the text */
-      }
-}
+    }
 
-@media (max-width: 768px) {
+    .navbar-brand {
+        align-items: center;
+        /* Center the elements */
+        text-align: center;
+        /* Center the text */
+    }
+
     .header_section .navbar-brand {
         display: flex;
         flex-direction: column;
         align-items: center;
         text-align: center;
-        font-size: 18px; /* Adjusted for better visibility */
-        margin: 0 auto; /* Center the brand */
+        font-size: 18px;
+        /* Adjusted for better visibility */
+        margin: 0 auto;
+        /* Center the brand */
     }
 
     .business {
@@ -120,16 +183,17 @@
 
     .businesstag {
         font-size: 16px;
-        white-space: normal; /* Allows text to wrap */
-        overflow-wrap: break-word; /* Prevents overflow */
+        white-space: normal;
+        overflow-wrap: break-word;
         line-height: 1.5;
-        max-width: 100%; /* Limit width to allow wrapping */
-        margin: 0 auto; /* Center-align within the container */
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .slider_section .detail-box {
         text-align: center;
-        padding: 15px; /* Added padding for better spacing */
+        padding: 15px;
+        /* Added padding for better spacing */
     }
 
     .about_section .img-box {
@@ -160,14 +224,25 @@
     }
 }
 
+
 @media (max-width: 576px) {
+    .sub_page .hero_area {
+        height: 55vh;
+    }
+
+    .hero_area {
+        height: 55vh;
+        padding: 20px;
+    }
+
     .header_section .navbar {
         padding: 0;
     }
 
     .slider_section .detail-box,
     .about_section .detail-box {
-        padding: 10px; /* Reduced padding for smaller screens */
+        padding: 10px;
+        /* Reduced padding for smaller screens */
     }
 
     .slider_section .carousel-indicators {
@@ -191,7 +266,7 @@
 
     .sub_page .hero_area {
         height: 35vh;
-      }
+    }
 
     .hero_area {
         padding: 20px;
@@ -199,7 +274,8 @@
 
     .footer_section {
         font-size: 12px;
-        text-align: center; /* Center-align text for small screens */
+        text-align: center;
+        /* Center-align text for small screens */
     }
 
     .navbar-toggler-icon {
@@ -207,7 +283,8 @@
     }
 
     .slider_section .detail-box {
-        padding: 10px 5px; /* Further reduced padding */
+        padding: 10px 5px;
+        /* Further reduced padding */
     }
 
     .header_section .navbar-brand span {
@@ -218,7 +295,7 @@
 @media (max-width: 400px) {
     .sub_page .hero_area {
         height: 55vh;
-      }
+    }
 
     .hero_area {
         padding: 20px;
@@ -226,15 +303,17 @@
     }
 
     .info_section .footer_contact {
-        width: 100%; /* Full-width for smaller screens */
-        padding: 10px; /* Padding adjustment */
+        width: 100%;
+        /* Full-width for smaller screens */
+        padding: 10px;
+        /* Padding adjustment */
     }
 }
 
 @media (max-width: 360px) {
     .sub_page .hero_area {
         height: 35vh;
-      }
+    }
 
     .hero_area {
         padding: 20px;
@@ -250,35 +329,8 @@
     }
 
     .footer_section {
-        text-align: center; /* Center-align for the smallest screens */
+        text-align: center;
+        /* Center-align for the smallest screens */
         padding: 10px;
-    }
-}
-
-@media (min-width: 1200px) {
-    .container {
-        max-width: 1170px;
-    }
-}
-
-
-/* Hide the navbar-toggler button on desktop screens */
-.navbar-toggler {
-    display: none; /* By default, hide the button */
-}
-
-/* Show the navbar-toggler button on screens smaller than 992px (tablet and mobile screens) */
-@media (max-width: 992px) {
-    .navbar-toggler {
-        display: block; /* Show the button */
-        position: absolute; /* Optional: Position it to the top right corner */
-        top: 0px; /* Adjust the top position */
-        right: 0px; /* Adjust the right position */
-        z-index: 1000; /* Ensure it appears above other elements */
-    }
-
-    .navbar-toggler .navbar-toggler-icon {
-        color: #333; /* Adjust icon color if needed */
-        font-size: 24px; /* Increase icon size for better visibility */
     }
 }

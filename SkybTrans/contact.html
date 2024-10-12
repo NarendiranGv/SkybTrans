@@ -90,16 +90,16 @@
         <div class="row">
           <div class="col-md-6">
             <div class="contact_form ">
-              <form action="">
-                <input type="text" placeholder="Name ">
-                <input type="Company Name" placeholder="Company Name ">
-                <input type="email" placeholder="Email">
-                <input type="Mobile Number" placeholder="Mobile">
-                <input type="text" placeholder="Message" class="message_input">
-                <button>
-                  Send
-                </button>
-              </form>
+              <div class="contact_form ">
+                <form id="contactForm">
+                  <input type="text" name="name" placeholder="Name" required>
+                  <input type="text" name="company" placeholder="Company Name" required>
+                  <input type="email" name="email" placeholder="Email" required>
+                  <input type="text" name="mobile" placeholder="Mobile" required>
+                  <input type="text" name="message" placeholder="Message" class="message_input" required>
+                  <button type="submit">Send</button>
+                </form>
+              </div>
             </div>
           </div>
           <div class="col-md-6">
@@ -114,23 +114,6 @@
     <!-- end contact section -->
 
   </div>
-  <!-- info section -->
-
-  <!-- <section class="info_section layout_padding">
-    <div class="footer_contact">
-      <div class="heading_container">
-        <h2>
-          Address
-        </h2>
-      </div>
-      <div class="box">
-        <span>No. 19A, Bharathiar Street, Meenambakkam, Chennai - 600027</span>
-      </div>
-    </div>
-  </section> -->
-
-
-  <!-- end info section -->
 
   <!-- footer section -->
   <section class="container-fluid footer_section">
@@ -173,6 +156,41 @@
         if ($(event.target).is('#myPopup')) {
           $('#myPopup').fadeOut(); // Hide the popup
         }
+      });
+    });
+  </script>
+
+  <script type="text/javascript">
+    (function () {
+      emailjs.init("6HuesGVD7BYsWSvke"); // Replace YOUR_USER_ID with your EmailJS user ID
+    })();
+
+    $(document).ready(function () {
+      // Your existing code for read-more functionality...
+
+      // EmailJS form submission code
+      document.getElementById('contactForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form values
+        var templateParams = {
+          name: this.name.value,
+          company: this.company.value,
+          email: this.email.value,
+          mobile: this.mobile.value,
+          message: this.message.value
+        };
+
+        // Send the email
+        emailjs.send('service_kfw6x1h', 'template_ebsytrk', templateParams)
+          .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+            alert('Your message has been sent successfully!');
+            document.getElementById('contactForm').reset(); // Resetting the form fields
+          }, function (error) {
+            console.error('FAILED...', error);
+            alert('There was an error sending your message. Please try again later.');
+          });
       });
     });
   </script>
