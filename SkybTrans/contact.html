@@ -69,15 +69,11 @@
       </div>
     </header>
     <!-- end header section -->
-
   </div>
 
 
   <div class="body_bg layout_padding">
-
-
     <!-- contact section -->
-
     <section class="contact_section">
       <div class="container">
         <div class="heading_container">
@@ -90,16 +86,14 @@
         <div class="row">
           <div class="col-md-6">
             <div class="contact_form ">
-              <div class="contact_form ">
-                <form id="contactForm">
-                  <input type="text" name="name" placeholder="Name" required>
-                  <input type="text" name="company" placeholder="Company Name" required>
-                  <input type="email" name="email" placeholder="Email" required>
-                  <input type="text" name="mobile" placeholder="Mobile" required>
-                  <input type="text" name="message" placeholder="Message" class="message_input" required>
-                  <button type="submit">Send</button>
-                </form>
-              </div>
+              <form id="contactForm">
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="text" name="company" placeholder="Company Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="mobile" placeholder="Mobile" required>
+                <input type="text" name="message" placeholder="Message" class="message_input" required>
+                <button type="submit">Send</button>
+              </form>
             </div>
           </div>
           <div class="col-md-6">
@@ -110,9 +104,7 @@
         </div>
       </div>
     </section>
-
     <!-- end contact section -->
-
   </div>
 
   <!-- footer section -->
@@ -161,34 +153,45 @@
   </script>
 
   <script type="text/javascript">
-    (function () {
-      emailjs.init("6HuesGVD7BYsWSvke"); // Replace YOUR_USER_ID with your EmailJS user ID
-    })();
-
-    $(document).ready(function () {
-      // Your existing code for read-more functionality...
-
-      // EmailJS form submission code
+    document.addEventListener('DOMContentLoaded', function () {
+      // EmailJS form submission using fetch
       document.getElementById('contactForm').addEventListener('submit', function (event) {
         event.preventDefault(); // Prevent the default form submission
 
         // Get form values
         var templateParams = {
-          name: this.name.value,
-          company: this.company.value,
-          email: this.email.value,
-          mobile: this.mobile.value,
-          message: this.message.value
+          service_id: 'service_kfw6x1h', // Replace with your service ID
+          template_id: 'template_ebsytrk', // Replace with your template ID
+          user_id: '6HuesGVD7BYsWSvke', // Replace with your EmailJS user ID
+          template_params: {
+            name: this.name.value,
+            company: this.company.value,
+            email: this.email.value,
+            mobile: this.mobile.value,
+            message: this.message.value
+          }
         };
 
-        // Send the email
-        emailjs.send('service_kfw6x1h', 'template_ebsytrk', templateParams)
+        // Send the email using fetch
+        fetch('https://api.emailjs.com/api/v1.0/email/send', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(templateParams)
+        })
           .then(function (response) {
-            console.log('SUCCESS!', response.status, response.text);
-            alert('Your message has been sent successfully!');
-            document.getElementById('contactForm').reset(); // Resetting the form fields
-          }, function (error) {
-            console.error('FAILED...', error);
+            if (response.ok) {
+              alert('Your message has been sent successfully!');
+              document.getElementById('contactForm').reset(); // Reset the form
+            } else {
+              return response.json().then(function (error) {
+                throw new Error(error.message);
+              });
+            }
+          })
+          .catch(function (error) {
+            console.error('Error:', error);
             alert('There was an error sending your message. Please try again later.');
           });
       });
